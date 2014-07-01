@@ -1,4 +1,5 @@
-This is a fork of the Logstash image by [pblittle](https://registry.hub.docker.com/u/pblittle/docker-logstash/). The only different being that I exposed port 7000.
+This is a fork of the Logstash image by [pblittle](https://registry.hub.docker.com/u/pblittle/docker-logstash/). 
+The only difference being that I exposed port 7000.
 
 This is a logstash (1.4.2) image that is configurable to run using either the embedded elasticsearch or an elasticsearch node running in a separate container.
 
