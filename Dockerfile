@@ -29,5 +29,8 @@ EXPOSE 9292
 # Syslog
 EXPOSE 514
 
+# TCP
+EXPOSE 7000
+
 # Start logstash
 ENTRYPOINT ["/app/bin/boot"]
