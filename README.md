@@ -1,3 +1,5 @@
+This is a fork of the Logstash image by [pblittle](https://registry.hub.docker.com/u/pblittle/docker-logstash/). The only different being that I exposed port 7000.
+
 This is a logstash (1.4.2) image that is configurable to run using either the embedded elasticsearch or an elasticsearch node running in a separate container.
 
 To fetch and start a container running logstash (1.4.2), elasticsearch (1.1.1) and Kibana 3 (3.0.1), simply:
