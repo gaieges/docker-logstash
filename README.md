@@ -3,8 +3,9 @@ This is a fork of the LogStash image by [pblittle](https://registry.hub.docker.c
 The differences:
 
 1) I exposed port 7000 for TCP input.
-2) Added the ability to set a config string in the command line.  This is useful if you want to programatically 
-run `docker run` (you don't have to create a file).
+2) Added the ability to set a config string in the command line.  
+This is useful if you want to programatically run `docker run`
+(you don't have to create a file).
 
 This is a logstash (1.4.2) image that is configurable to run using either the embedded elasticsearch or an elasticsearch node running in a separate container.
 
