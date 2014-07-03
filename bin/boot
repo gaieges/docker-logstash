@@ -7,6 +7,7 @@ set -x
 # logstash.conf file.
 LOGSTASH_CONFIG_URL=${LOGSTASH_CONFIG_URL:-}
 LOGSTASH_CONFIG_FILE="/opt/logstash.conf"
+LOGSTASH_CONFIG_STRING=${LOGSTASH_CONFIG_STRING:-}
 
 # If you don't provide a value for the LOGSTASH_CONFIG_URL env
 # var, your install will default to our very basic logstash.conf file.
@@ -14,7 +15,19 @@ if [ -z "${LOGSTASH_CONFIG_URL}" ]; then
     LOGSTASH_CONFIG_URL="https://gist.github.com/pblittle/8778567/raw/logstash.conf"
 fi
 
-wget $LOGSTASH_CONFIG_URL -O $LOGSTASH_CONFIG_FILE
+
+# Detect command line config string
+if [ -n "${LOGSTASH_CONFIG_STRING}" ]; then
+    # the config string overrides all 
+    # Yes, I know. This looks ugly.
+    LOGSTASH_CONFIG_URL=""
+    echo ${LOGSTASH_CONFIG_STRING} > $LOGSTASH_CONFIG_FILE
+fi
+
+
+if [ -n "${LOGSTASH_CONFIG_URL}" ]; then
+    wget $LOGSTASH_CONFIG_URL -O $LOGSTASH_CONFIG_FILE
+fi
 
 # This magic will replace ES_HOST and ES_PORT in your logstash.conf
 # file if they exist with the IP and port dynamically generated
@@ -41,6 +54,7 @@ mkdir -p $SSL_CERT_PATH
 # Download logstash-forwarder key and certificate
 wget $LF_SSL_CERT_URL -O $LF_SSL_CERT_FILE
 wget $LF_SSL_CERT_KEY_URL -O $LF_SSL_CERT_KEY_FILE
+
 
 # Fire up logstash!
 exec /opt/logstash/bin/logstash \

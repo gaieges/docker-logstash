@@ -1,5 +1,10 @@
-This is a fork of the Logstash image by [pblittle](https://registry.hub.docker.com/u/pblittle/docker-logstash/). 
-The only difference being that I exposed port 7000.
+This is a fork of the LogStash image by [pblittle](https://registry.hub.docker.com/u/pblittle/docker-logstash/). 
+
+The differences:
+
+1) I exposed port 7000 for TCP input.
+2) Added the ability to set a config string in the command line.  This is useful if you want to programatically 
+run `docker run` (you don't have to create a file).
 
 This is a logstash (1.4.2) image that is configurable to run using either the embedded elasticsearch or an elasticsearch node running in a separate container.
 
@@ -45,6 +50,15 @@ Without any configuration changes, an example `logstash.conf` will be created fo
 	  -p 514:514 \
 	  -p 9292:9292 \
 	  -e LOGSTASH_CONFIG_URL=https://gist.github.com/pblittle/8778567/raw/logstash.conf \
+	  pblittle/docker-logstash
+
+If you want to set the config string in the command line. 
+
+    docker run -d \
+      --name logstash \
+	  -p 514:514 \
+	  -p 9292:9292 \
+	  -e LOGSTASH_CONFIG_STRING="input { stdin { } } output { stdout {} }"
 	  pblittle/docker-logstash
 
 To build the image locally using Vagrant, perform the following steps from the project root:

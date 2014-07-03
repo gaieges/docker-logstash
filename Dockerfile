@@ -1,5 +1,5 @@
 FROM pblittle/base:0.3.0
-MAINTAINER P. Barrett Little <barrett@barrettlittle.com>
+MAINTAINER Rex Posadas <rexposadas@yahoo.com>
 
 # Download latest package lists
 RUN apt-get update
