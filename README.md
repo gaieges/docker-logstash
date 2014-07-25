@@ -14,6 +14,7 @@ To fetch and start a container running logstash (1.4.2), elasticsearch (1.1.1) a
 	docker run -d \
 	  --name logstash \
 	  -p 514:514 \
+      -p 7000:7000 \
 	  -p 9200:9200 \
 	  -p 9292:9292 \
 	  pblittle/docker-logstash
