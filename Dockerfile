@@ -33,4 +33,5 @@ EXPOSE 514
 EXPOSE 7000
 
 # Start logstash
-ENTRYPOINT ["/app/bin/boot"]
+CMD /app/bin/boot
+# CMD /opt/logstash/bin/logstash -e 'input {tcp {port => 7000}} output {elasticsearch {host => "127.0.0.1"}}'
