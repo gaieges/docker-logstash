@@ -6,7 +6,7 @@ set -x
 # Use the LOGSTASH_CONFIG_URL env var to download and use your
 # logstash.conf file.
 LOGSTASH_CONFIG_URL=${LOGSTASH_CONFIG_URL:-}
-LOGSTASH_CONFIG_FILE="/usr/share/logstash/pipeline/logstash.conf"
+LOGSTASH_CONFIG_FILE="/usr/share/logstash/config/logstash.conf"
 LOGSTASH_CONFIG_STRING=${LOGSTASH_CONFIG_STRING:-}
 
 # If you don't provide a value for the LOGSTASH_CONFIG_URL env
