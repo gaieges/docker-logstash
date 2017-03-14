@@ -3,7 +3,6 @@ MAINTAINER Evin Callahan <gaieges@gmail.com>
 
 # Copy build files to container root
 ADD . /app
-ADD logstash.yml /usr/share/logstash/config/logstash.yml
 
 # Add any other plugins you need here
 RUN logstash-plugin install logstash-output-gelf
