@@ -5,5 +5,8 @@ MAINTAINER Evin Callahan <gaieges@gmail.com>
 ADD . /app
 ADD logstash.yml /usr/share/logstash/config/logstash.yml
 
+# Add any other plugins you need here
+RUN logstash-plugin install logstash-output-gelf
+
 # Start logstash
 CMD /app/entrypoint.sh
