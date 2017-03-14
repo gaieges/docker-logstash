@@ -1,4 +1,4 @@
-FROM docker.elastic.co/logstash/logstash:5.2.2
+FROM logstash:5.2.2-alpine
 MAINTAINER Evin Callahan <gaieges@gmail.com>
 
 # Copy build files to container root
