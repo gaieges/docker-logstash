@@ -5,7 +5,7 @@ MAINTAINER Evin Callahan <gaieges@gmail.com>
 ADD . /app
 
 # Add any other plugins you need here
-RUN logstash-plugin install logstash-output-gelf
+RUN logstash-plugin install logstash-output-gelf logstash-output-syslog
 
 # Start logstash
 CMD /app/entrypoint.sh

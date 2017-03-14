@@ -20,7 +20,7 @@ services:
 
   logstash:
     build: .
-    image: gaieges/logstash:v1.4
+    image: gaieges/logstash:v1.5
     restart: always
     expose:
       - '5000/udp'
