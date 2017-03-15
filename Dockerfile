@@ -8,4 +8,4 @@ ADD . /app
 RUN logstash-plugin install logstash-output-gelf logstash-output-syslog
 
 # Start logstash
-CMD /app/entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]
